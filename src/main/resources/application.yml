@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: KafkaProcesserApp
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    streams:
+      properties:
+        spring.json.trusted.packages: "com.example.kafkaprocesserapp.model, com.example.kafkaproducerapp.model, java.util, java.lang"
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+
+server:
+  port: 8081
